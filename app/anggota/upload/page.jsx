@@ -20,7 +20,7 @@ export default function Upload() {
       const res = await axios.post("/api/anggota/upload", dataAnggota);
       setLoading(false);
       if (res.status === 201) {
-        router.replace("/pelajar");
+        router.replace("/anggota");
       }
     } catch (error) {
       console.log(error);

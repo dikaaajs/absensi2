@@ -70,7 +70,7 @@ export default function Pelajar() {
       )}
 
       {/* headline */}
-      <h1 className="text-headline">Pelajar</h1>
+      <h1 className="text-headline">Anggota</h1>
 
       {/* filter data */}
       <Filter filterData={filterData} />
@@ -119,8 +119,8 @@ export default function Pelajar() {
                             popupButtonIndex === idx ? "" : "hidden"
                           }`}
                         >
-                          <Link href={`/pelajar/edit?s=${i._id}`}>edit</Link>
-                          <Link href={`/pelajar/details?s=${i._id}`}>
+                          <Link href={`/anggota/edit?s=${i._id}`}>edit</Link>
+                          <Link href={`/anggota/details?s=${i._id}`}>
                             details
                           </Link>
                           <button
@@ -185,7 +185,7 @@ export default function Pelajar() {
             next
           </button>
         </div>
-        <Link href={"/pelajar/upload"} className="btn block w-fit ml-auto">
+        <Link href={"/anggota/upload"} className="btn block w-fit ml-auto">
           add +
         </Link>
       </div>

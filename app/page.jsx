@@ -22,7 +22,7 @@ export default function Dashboard() {
   if (loading) return <Loading />;
 
   return (
-    <div className="pb-[50px]">
+    <div className="pb-[10px]">
       <h1 className="text-headline text-first drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)] pb-[50px] relative px-[20px] underline">
         <img
           src="/blob.svg"
@@ -32,7 +32,7 @@ export default function Dashboard() {
         Dashboard
       </h1>
 
-      <h2 className="font-poppins-bold text-[.7em] pb-[20px]">
+      <h2 className="font-poppins-bold text-[.7em] md:text-[1.5rem] pb-[20px]">
         Acara hari ini :
       </h2>
       {acara[0] === undefined ? (
@@ -76,39 +76,41 @@ export default function Dashboard() {
             };
 
             return (
-              <div
-                className="w-full md:w-[30%] md:mx-0 py-[15px] px-[10px] border-[1px] border-slate-800 border-opacity-50 rounded-[5px]"
-                key={idx}
-              >
-                {/* header */}
-                <div className="flex justify-between items-start">
-                  <div className="flex gap-[10px] items-center">
-                    <div>
-                      <img
-                        src="/logo.jpg"
-                        alt="logo"
-                        className="w-[30px] rounded-full border-2 border-gray-800"
-                      />
+              <div className="flex w-full">
+                <div
+                  className="w-full md:w-[30%] md:mx-0 py-[15px] px-[10px] border-[1px] border-slate-800 border-opacity-50 rounded-[5px]"
+                  key={idx}
+                >
+                  {/* header */}
+                  <div className="flex justify-between items-start">
+                    <div className="flex gap-[10px] items-center">
+                      <div>
+                        <img
+                          src="/logo.jpg"
+                          alt="logo"
+                          className="w-[30px] rounded-full border-2 border-gray-800"
+                        />
+                      </div>
+                      <div>
+                        <h2 className="font-poppins-bold text-[.8em]">
+                          {i.nama}
+                        </h2>
+                        <p>{i.tempat}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h2 className="font-poppins-bold text-[.8em]">
-                        {i.nama}
-                      </h2>
-                      <p>{i.tempat}</p>
-                    </div>
+                    <img src="/option.svg" className="w-[20px]" alt="" />
                   </div>
-                  <img src="/option.svg" className="w-[20px]" alt="" />
-                </div>
 
-                <div className="w-full mx-auto">
-                  <DonatChart data={chartData} />
-                </div>
+                  <div className="w-full mx-auto">
+                    <DonatChart data={chartData} />
+                  </div>
 
-                <div className="flex justify-between items-end">
-                  <p>start : {i.mulai}</p>
-                  <Link href={`/absen?s=${i._id}`} className="btn">
-                    absen
-                  </Link>
+                  <div className="flex justify-between items-end">
+                    <p>start : {i.mulai}</p>
+                    <Link href={`/absen?s=${i._id}`} className="btn">
+                      absen
+                    </Link>
+                  </div>
                 </div>
               </div>
             );
